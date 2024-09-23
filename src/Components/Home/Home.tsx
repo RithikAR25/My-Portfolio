@@ -18,7 +18,6 @@ const Home = () => {
         sx={{ height: "100vh", width: "100%" }}
       >
         <Box
-          // bgcolor="pink"
           sx={{ height: "10vh", width: "100%" }}
           display="flex"
           justifyContent="start"

@@ -40,29 +40,29 @@ const StickyAvatar: React.FC<StickyAvatarProps> = ({
           src={avatarImage}
           sx={{
             width: {
-              xs: "20vh", // Extra small screens
+              xs: "17vh", // Extra small screens
               sm: "19vh", // Small screens
               md: "19vh", // Medium screens
-              lg: "13vw", // Large screens
-              xl: "13vw", // Extra large screens
+              lg: "10vw", // Large screens
+              xl: "10vw", // Extra large screens
             }, // Larger size for the avatar
             height: {
-              xs: "20vh", // Extra small screens
+              xs: "17vh", // Extra small screens
               sm: "19vh", // Small screens
               md: "19vh", // Medium screens
-              lg: "13vw", // Large screens
-              xl: "13vw", // Extra large screens
+              lg: "10vw", // Large screens
+              xl: "10vw", // Extra large screens
             }, // Larger size for the avatar
             border: "11px solid ",
             borderColor: "secondary.main", // Thicker border
             boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.3)", // Stronger shadow for more emphasis
             position: "absolute",
             top: {
-              xs: "-10vh", // Extra small screens
+              xs: "-8.5vh", // Extra small screens
               sm: "-9.5vh", // Small screens
               md: "-9.5vh", // Medium screens
-              lg: "-6.5vw", // Large screens
-              xl: "-6.5vw", // Extra large screens
+              lg: "-5vw", // Large screens
+              xl: "-5vw", // Extra large screens
             },
           }}
         />
@@ -89,8 +89,8 @@ const StickyAvatar: React.FC<StickyAvatarProps> = ({
                 xs: "3.5vw", // Extra small screens
                 sm: "2.1vw", // Small screens
                 md: "2vw", // Medium screens
-                lg: "2vw", // Large screens
-                xl: "2vw", // Extra large screens
+                lg: "1.7vw", // Large screens
+                xl: "1.8vw", // Extra large screens
               },
             }}
           >
@@ -104,7 +104,7 @@ const StickyAvatar: React.FC<StickyAvatarProps> = ({
                 xs: "3vw", // Extra small screens
                 sm: "1.9vw", // Small screens
                 md: "1.9vw", // Medium screens
-                lg: "1.9vw", // Large screens
+                lg: "1.6vw", // Large screens
                 xl: "1.9vw", // Extra large screens
               },
             }}

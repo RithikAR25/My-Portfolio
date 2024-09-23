@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
       ref={navbarRef}
       sx={{
         backgroundColor: "secondary.dark",
-        height: "13vh",
+        height: "10vh",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         zIndex: 1100,
         display: "flex",
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
               />
               <AnimatedButton
                 href="#projects"
-                spanText="Projects"
+                spanText="Project"
                 afterContent="Projects"
                 onClick={() => handleSmoothScroll("projects")} // Smooth scroll to projects
               />
