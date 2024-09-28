@@ -107,6 +107,7 @@ const StickyAvatar: React.FC<StickyAvatarProps> = ({
                 lg: "1.6vw", // Large screens
                 xl: "1.9vw", // Extra large screens
               },
+              color: "c0c0c0",
             }}
           >
             {title}

@@ -1,168 +1,203 @@
 :root {
-    --carousel-transition-duration: 250ms;
-    --carousel-transition-ease: ease-out;
-    --carousel-bg-color-rgb: 0, 0, 0;
-    --carousel-item-width: 14.5vw;
-    --carousel-item-height: 21.7vw;
-    --carousel-item-hover-effect: 1.075;
-    --carousel-diameter: 60vw;
-    --carousel-3d-perspective: 1000px;
-    --carousel-3d-perspective-origin: 50% 20%;
-    --carousel-animation-duration: 50s;
+  --carousel-transition-duration: 250ms;
+  --carousel-transition-ease: ease-out;
+  --carousel-bg-color-rgb: 0, 0, 0;
+  --carousel-item-width: 14.5vw;
+  --carousel-item-height: 21.7vw;
+  --carousel-item-hover-effect: 1.075;
+  --carousel-diameter: 60vw;
+  --carousel-3d-perspective: 1000px;
+  --carousel-3d-perspective-origin: 50% 20%;
+  --carousel-animation-duration: 50s;
 }
 
 .carousel {
-    --_diameter: var(--carousel-diameter);
-    --_radius: calc(var(--_diameter) / 2);
-    --_item-width: var(--carousel-item-width);
-    --_item-height: var(--carousel-item-height);
-    perspective: var(--carousel-3d-perspective);
-    perspective-origin: var(--carousel-3d-perspective-origin);
-    width: var(--_diameter);
-    height: var(--_diameter);
+  --_diameter: var(--carousel-diameter);
+  --_radius: calc(var(--_diameter) / 2);
+  --_item-width: var(--carousel-item-width);
+  --_item-height: var(--carousel-item-height);
+  perspective: var(--carousel-3d-perspective);
+  perspective-origin: var(--carousel-3d-perspective-origin);
+  width: var(--_diameter);
+  height: var(--_diameter);
 }
 
 .carousel-rotation-direction {
-    --_z: calc(var(--_radius) * -1);
-    transform: translateZ(var(--_z));
-    transform-style: preserve-3d;
-
+  --_z: calc(var(--_radius) * -1);
+  transform: translateZ(var(--_z));
+  transform-style: preserve-3d;
 }
 
 @keyframes carousel-rotation-reverse {
-    from {
-        transform: translateZ(var(--_z)) rotateY(0deg);
-    }
+  from {
+    transform: translateZ(var(--_z)) rotateY(0deg);
+  }
 
-    to {
-        transform: translateZ(var(--_z)) rotateY(360deg);
-    }
+  to {
+    transform: translateZ(var(--_z)) rotateY(360deg);
+  }
 }
 
 .carousel-control-button {
-    --_width: 1.25rem;
-    --_height: 4rem;
-    z-index: 1;
-    width: var(--_width);
-    height: var(--_height);
-    background-color: #797979;
-    position: absolute;
-    cursor: pointer;
+  --_width: 1.25rem;
+  --_height: 4rem;
+  z-index: 1;
+  width: var(--_width);
+  height: var(--_height);
+  background-color: #797979;
+  position: absolute;
+  cursor: pointer;
 }
 
 .carousel-control-button.left {
-    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-    top: calc(var(--_radius) - var(--_height) / 2);
-    left: 0;
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+  top: calc(var(--_radius) - var(--_height) / 2);
+  left: 0;
 }
 
 .carousel-control-button.right {
-    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-    top: calc(var(--_radius) - var(--_height) / 2);
-    right: 0;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  top: calc(var(--_radius) - var(--_height) / 2);
+  right: 0;
 }
 
 .carousel-item-wrapper {
-    transform-style: inherit;
-    width: inherit;
-    height: inherit;
-    list-style-type: none;
-    position: relative;
-
+  transform-style: inherit;
+  width: inherit;
+  height: inherit;
+  list-style-type: none;
+  position: relative;
 }
 
 .moveRight {
-    animation: carousel-rotation-reverse calc(var(--carousel-animation-duration) / 2) reverse linear infinite;
-    /* Modification: Initially set the animation to running */
-    animation-play-state: running;
+  animation: carousel-rotation-reverse
+    calc(var(--carousel-animation-duration) / 2) reverse linear infinite;
+  /* Modification: Initially set the animation to running */
+  animation-play-state: running;
 }
 
 .moveLeft {
-    animation: carousel-rotation-reverse calc(var(--carousel-animation-duration) / 2) linear infinite;
-    animation-play-state: running;
-    /* Ensures the animation is active by default */
+  animation: carousel-rotation-reverse
+    calc(var(--carousel-animation-duration) / 2) linear infinite;
+  animation-play-state: running;
+  /* Ensures the animation is active by default */
 }
 
 @keyframes carousel-rotation-normal {
-    from {
-        transform: rotateY(0deg);
-    }
+  from {
+    transform: rotateY(0deg);
+  }
 
-    to {
-        transform: rotateY(360deg);
-    }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .carousel-item {
-    --_width: var(--_item-width);
-    --_height: var(--_item-height);
-    --_rotation: calc(360 / var(--_num-elements) * var(--_index) * 1deg);
-    left: calc(var(--_radius) - var(--_item-width) / 2);
-    top: calc(var(--_radius) - var(--_item-height) / 2);
-    transform: rotateY(var(--_rotation)) translateZ(var(--_radius));
-    transform-style: inherit;
-    width: var(--_width);
-    height: var(--_height);
-    position: absolute;
+  --_width: var(--_item-width);
+  --_height: var(--_item-height);
+  --_rotation: calc(360 / var(--_num-elements) * var(--_index) * 1deg);
+  left: calc(var(--_radius) - var(--_item-width) / 2);
+  top: calc(var(--_radius) - var(--_item-height) / 2);
+  transform: rotateY(var(--_rotation)) translateZ(var(--_radius));
+  transform-style: inherit;
+  width: var(--_width);
+  height: var(--_height);
+  position: absolute;
+}
+
+.itemName {
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: absolute;
+  top: -10%; /* Position above the carousel item */
+  left: 0; /* Added */
+  right: 0; /* Added */
+  margin: 0 auto; /* Centers the item horizontally */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 9999;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item:hover .itemName {
+  opacity: 1; /* Fade-in effect on hover */
+}
+
+@media (max-width: 768px) {
+  .itemName {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    top: -1.5rem; /* Adjust position for smaller screens */
+  }
 }
 
 .carousel-item a {
-    display: block;
-    width: inherit;
-    height: inherit;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    transition: filter var(--carousel-transition-duration) var(--carousel-transition-ease);
+  display: block;
+  width: inherit;
+  height: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: filter var(--carousel-transition-duration)
+    var(--carousel-transition-ease);
 }
 
 .carousel-item:hover {
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
-    transform: rotateY(var(--_rotation)) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+  transform: rotateY(var(--_rotation))
+    translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
 }
 
 /* Reflection styles */
 .reflection {
-    margin-top: -105%;
-    height: 70%;
-    transform-origin: bottom;
-    transform: scaleY(1) rotateX(-100deg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    opacity: 1;
-    filter: blur(2px);
-    background-image: linear-gradient(to top,
-            rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0));
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  margin-top: -105%;
+  height: 70%;
+  transform-origin: bottom;
+  transform: scaleY(1) rotateX(-100deg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  filter: blur(2px);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .reflection::after {
-    content: "";
-    display: block;
-    height: 100%;
-    background: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.5),
-            rgba(255, 255, 255, 0));
+  content: "";
+  display: block;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .carousel-ground {
-    --_width: var(--_diameter);
-    --_height: var(--_diameter);
-    left: calc(var(--_radius) - var(--_width) / 2);
-    top: calc(var(--_radius) - var(--_height) / 2);
-    transform: rotateX(90deg) translateZ(calc(var(--_item-height) / -2));
-    width: var(--_width);
-    height: var(--_height);
-    background: radial-gradient(rgba(128, 128, 128, 0.75) 15%,
-            rgba(0, 0, 0, 0) 60%);
-    opacity: 0.5;
-    position: absolute;
+  --_width: var(--_diameter);
+  --_height: var(--_diameter);
+  left: calc(var(--_radius) - var(--_width) / 2);
+  top: calc(var(--_radius) - var(--_height) / 2);
+  transform: rotateX(90deg) translateZ(calc(var(--_item-height) / -2));
+  width: var(--_width);
+  height: var(--_height);
+  background: radial-gradient(
+    rgba(128, 128, 128, 0.75) 15%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  opacity: 0.5;
+  position: absolute;
 }
 
 /* Modification: Hover state to pause both animations */
 .carousel:hover .carousel-item-wrapper,
 .carousel:hover .carousel-rotation-direction {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
