@@ -22,19 +22,19 @@ const Portfolio: React.FC<PortfolioProps> = ({ themeMode, toggleTheme }) => {
         <Home />
       </Box>
       <Navbar />
-      <Box id="about" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
+      <Box id="about" sx={{ paddingTop: "10vh" }}>
         <About />
       </Box>
-      <Box id="projects" sx={{ minHeight: "100vh", paddingTop: "13vh" }}>
+      <Box id="projects" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
         <Projects />
       </Box>
-      <Box id="skills" sx={{ minHeight: "100vh", paddingTop: "13vh" }}>
+      <Box id="skills" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
         <Skills />
       </Box>
-      <Box id="contact" sx={{ minHeight: "100vh", paddingTop: "13vh" }}>
+      <Box id="contact" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
         <Contact />
       </Box>
-      <Box id="blog" sx={{ minHeight: "100vh", paddingTop: "13vh" }}>
+      <Box id="blog" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
         <About />
       </Box>
       <Carousel />
