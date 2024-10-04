@@ -88,8 +88,8 @@ const About = () => {
             sx={{
               opacity: isRedVisible ? 1 : 0, // Fade in/out
               transform: isRedVisible
-                ? "scale(1) translateY(0px)" // Scale and translate to original position when visible
-                : "scale(0.9) translateY(100px)", // Scale down and translate upwards when not visible
+                ? "scale(1) " // Scale and translate to original position when visible
+                : "scale(0.9) ", // Scale down and translate upwards when not visible
               transition: "opacity 1s ease, transform 1s ease", // Smooth transition
               transformOrigin: "top", // Scale from the top
             }}
@@ -129,8 +129,8 @@ const About = () => {
             sx={{
               opacity: isYellowVisible ? 1 : 0, // Fade in/out
               transform: isYellowVisible
-                ? "translateX(0px) rotate(0deg)"
-                : "translateX(100px) rotate(-5deg)", // Slide in from the left with a rotation
+                ? "scale(1) " // Scale and translate to original position when visible
+                : "scale(0.9) ", // Slide in from the left with a rotation
               transition: "opacity 1s ease, transform 1s ease", // Smooth transition
             }}
           >
