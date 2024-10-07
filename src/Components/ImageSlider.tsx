@@ -220,19 +220,6 @@ const ImageSlider = () => {
         </IconButton>
       </Box>
 
-      {/* Time Running Bar */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          height: "4px",
-          width: `${progress}%`, // Sync the width with progress
-          backgroundColor: "primary.main",
-          transition: `width 0.1s linear`, // Smooth progress update
-        }}
-      />
-
       {/* Preview Cards for Next 3 Images */}
       <Box
         sx={{
@@ -287,6 +274,18 @@ const ImageSlider = () => {
           </Card>
         ))}
       </Box>
+      {/* Time Running Bar */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          height: "4px",
+          width: `${progress}%`, // Sync the width with progress
+          backgroundColor: "primary.main",
+          transition: `width 0.1s linear`, // Smooth progress update
+        }}
+      />
     </Box>
   );
 };
