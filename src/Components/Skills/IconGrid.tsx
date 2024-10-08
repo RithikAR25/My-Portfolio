@@ -137,7 +137,7 @@
 
 // export default IconGrid;
 
-import React, { useEffect, useRef, useState } from "react"; // Import necessary React hooks
+import { useEffect, useRef, useState } from "react"; // Import necessary React hooks
 import { Grid, Box, Typography } from "@mui/material";
 // Import your icons here
 import Icon1 from "../../assets/Icons/icons8-unity.svg";
@@ -214,20 +214,25 @@ const IconGrid = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const index = entry.target.getAttribute("data-index");
-          if (entry.isIntersecting && index) {
-            setVisibleIcons((prev) => {
-              const updated = [...prev];
-              updated[parseInt(index)] = true; // Mark icon as visible
-              return updated;
-            });
-          } else {
-            // Reset visibility if the icon goes out of view
-            setVisibleIcons((prev) => {
-              const updated = [...prev];
-              updated[parseInt(index)] = false; // Mark icon as not visible
-              return updated;
-            });
+          const indexStr = entry.target.getAttribute("data-index");
+          if (indexStr) {
+            // Check if indexStr is not null
+            const index = parseInt(indexStr); // Now we can safely parse it
+
+            if (entry.isIntersecting) {
+              setVisibleIcons((prev) => {
+                const updated = [...prev];
+                updated[index] = true; // Mark icon as visible
+                return updated;
+              });
+            } else {
+              // Reset visibility if the icon goes out of view
+              setVisibleIcons((prev) => {
+                const updated = [...prev];
+                updated[index] = false; // Mark icon as not visible
+                return updated;
+              });
+            }
           }
         });
       },
