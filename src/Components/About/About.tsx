@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react"; // Import React and necessary hooks
-import { Box, Button, Typography } from "@mui/material";
+import { useState, useEffect, useRef } from "react"; // Import React and necessary hooks
+import { Box, Typography } from "@mui/material";
 import Heading from "../Heading";
 import linkedinIcon from "../../assets/Icons/linkedin-brands-solid (3).svg";
 import githubIcon from "../../assets/Icons/github-alt-brands-solid (1).svg";
