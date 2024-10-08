@@ -8,13 +8,13 @@ import {
   Typography,
 } from "@mui/material";
 import { ArrowForward, ArrowBack } from "@mui/icons-material";
-import BallRoll2 from "../assets/Images/robot-human-silhouettes.jpg"; // Example image import
-import DiseasePredictionApp from "../assets/Images/DiseasePredictionApp.jpg";
-import ImageGeneration from "../assets/Images/autism-day-awareness-collage-style-with-people.jpg";
-import PerkPal from "../assets/Images/growth-strategy-management-mission-success-concept.jpg";
-import MindDuel from "../assets/Images/human-brain-detailed-structure.jpg";
-import TaskTrace from "../assets/Images/flat-lay-clean-office-desk.jpg";
-import Websiteclone from "../assets/Images/view-half-rhino-with-futuristic-robotic-parts.jpg";
+import BallRoll2 from "../../assets/Images/robot-human-silhouettes.jpg"; // Example image import
+import DiseasePredictionApp from "../../assets/Images/DiseasePredictionApp.jpg";
+import ImageGeneration from "../../assets/Images/autism-day-awareness-collage-style-with-people.jpg";
+import PerkPal from "../../assets/Images/growth-strategy-management-mission-success-concept.jpg";
+import MindDuel from "../../assets/Images/human-brain-detailed-structure.jpg";
+import TaskTrace from "../../assets/Images/flat-lay-clean-office-desk.jpg";
+import Websiteclone from "../../assets/Images/view-half-rhino-with-futuristic-robotic-parts.jpg";
 
 const imageData = [
   {
