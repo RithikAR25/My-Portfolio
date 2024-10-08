@@ -10,6 +10,7 @@ import Contact from "../Components/Contact/Contact";
 import ScrollToTopButton from "../Components/ScrollToTopButton";
 import Carousel from "../Components/Blog/Carousel";
 import Blog from "../Components/Blog/Blog";
+import Footer from "../Components/Footer";
 
 interface PortfolioProps {
   themeMode: "light" | "dark";
@@ -39,6 +40,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ themeMode, toggleTheme }) => {
       <Box id="contact" sx={{ paddingTop: "10vh" }}>
         <Contact />
       </Box>
+      <Footer />
 
       {/* Use the ThemeToggleButton component */}
       <ThemeToggleButton themeMode={themeMode} toggleTheme={toggleTheme} />

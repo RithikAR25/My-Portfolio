@@ -62,7 +62,7 @@ const Home = () => {
               transition: "transform 0.3s ease", // Smooth transition for the scale effect
             }}
             onClick={() =>
-              window.open("https://github.com/RithikAR25", "_blank")
+              window.open("`https://github.com/RithikAR25`", "_blank")
             } // Open LinkedIn in a new tab
             onMouseEnter={(e) =>
               (e.currentTarget.style.transform = "scale(1.1)")
