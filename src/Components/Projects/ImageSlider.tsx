@@ -72,7 +72,6 @@ const imageData = [
 ];
 
 const timeRunningDuration = 7000; // Duration for each slide
-const transitionDuration = 3000; // Time duration for the transition
 
 const ImageSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -146,7 +145,7 @@ const ImageSlider = () => {
           transition: "transform 0.5s ease-in-out",
         }}
       >
-        {imageData.map((item, index) => (
+        {imageData.map((item) => (
           <Box
             key={item.id}
             sx={{

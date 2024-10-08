@@ -8,7 +8,6 @@ import Projects from "../Components/Projects/Projects";
 import Skills from "../Components/Skills/Skills";
 import Contact from "../Components/Contact/Contact";
 import ScrollToTopButton from "../Components/ScrollToTopButton";
-import Carousel from "../Components/Blog/Carousel";
 import Blog from "../Components/Blog/Blog";
 import Footer from "../Components/Footer";
 

@@ -9,7 +9,6 @@ interface AnimatedButtonProps {
 }
 
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({
-  href, // section ID passed via href
   spanText,
   afterContent,
   onClick, // Smooth scroll handler
