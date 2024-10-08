@@ -214,7 +214,7 @@ const IconGrid = () => {
             />
             {/* Title under the icon, no animation applied */}
             <Typography
-              variant="caption" // You can change this to another variant if desired
+              variant="h6" // You can change this to another variant if desired
               sx={{ color: "primary.main", marginTop: "0.5rem" }} // Styling for the title
             >
               {icon.title}

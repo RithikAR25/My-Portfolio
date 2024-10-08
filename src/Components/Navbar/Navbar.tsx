@@ -112,16 +112,16 @@ const Navbar: React.FC = () => {
                 onClick={() => handleSmoothScroll("skills")} // Smooth scroll to skills
               />
               <AnimatedButton
+                href="#Blog"
+                spanText="Blog"
+                afterContent="Blog"
+                onClick={() => handleSmoothScroll("blog")} // Smooth scroll to blog
+              />
+              <AnimatedButton
                 href="#contact"
                 spanText="Contact"
                 afterContent="Contact"
                 onClick={() => handleSmoothScroll("contact")} // Smooth scroll to contact
-              />
-              <AnimatedButton
-                href="#blog"
-                spanText="Blog"
-                afterContent="Blog"
-                onClick={() => handleSmoothScroll("blog")} // Smooth scroll to blog
               />
             </>
           )}
@@ -188,19 +188,19 @@ const Navbar: React.FC = () => {
                     component="button"
                     onClick={() => {
                       toggleDrawer(false);
-                      handleSmoothScroll("contact");
+                      handleSmoothScroll("blog");
                     }}
                   >
-                    <ListItemText primary="Contact" />
+                    <ListItemText primary="Blog" />
                   </ListItem>
                   <ListItem
                     component="button"
                     onClick={() => {
                       toggleDrawer(false);
-                      handleSmoothScroll("blog");
+                      handleSmoothScroll("contact");
                     }}
                   >
-                    <ListItemText primary="Blog" />
+                    <ListItemText primary="Contact" />
                   </ListItem>
                 </List>
               </Drawer>

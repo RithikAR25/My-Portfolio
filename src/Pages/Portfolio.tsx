@@ -8,7 +8,8 @@ import Projects from "../Components/Projects/Projects";
 import Skills from "../Components/Skills/Skills";
 import Contact from "../Components/Contact/Contact";
 import ScrollToTopButton from "../Components/ScrollToTopButton";
-import Carousel from "../Components/Carousel";
+import Carousel from "../Components/Blog/Carousel";
+import Blog from "../Components/Blog/Blog";
 
 interface PortfolioProps {
   themeMode: "light" | "dark";
@@ -29,14 +30,15 @@ const Portfolio: React.FC<PortfolioProps> = ({ themeMode, toggleTheme }) => {
         <Projects />
       </Box>
 
-      <Box id="skills" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
+      <Box id="skills" sx={{ paddingTop: "10vh" }}>
         <Skills />
       </Box>
-      <Box id="contact" sx={{ minHeight: "100vh", paddingTop: "10vh" }}>
+      <Box id="blog" sx={{ paddingTop: "10vh" }}>
+        <Blog />
+      </Box>
+      <Box id="contact" sx={{ paddingTop: "10vh" }}>
         <Contact />
       </Box>
-      <Box id="blog" sx={{ minHeight: "100vh", paddingTop: "10vh" }}></Box>
-      <Carousel />
 
       {/* Use the ThemeToggleButton component */}
       <ThemeToggleButton themeMode={themeMode} toggleTheme={toggleTheme} />

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import Heading from "../Heading";
-import ImageSlider from "../ImageSlider";
+import ImageSlider from "./ImageSlider";
 
 const Projects = () => {
   return (

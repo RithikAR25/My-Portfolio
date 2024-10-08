@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styles from "./Carousel.module.css"; // Import the CSS module
-import Delhi from "../assets/Images/Delhi.png";
-import Gujarat from "../assets/Images/Gujarat.png";
-import Harihar_fort from "../assets/Images/Harihar_fort.png";
-import Harischandragad from "../assets/Images/Harischandragad.png";
-import Munnar from "../assets/Images/Munnar.png";
-import Pondy from "../assets/Images/Pondy.png";
-import Punjab from "../assets/Images/Punjab.png";
-import Rajasthan from "../assets/Images/Rajasthan.png";
-import anayadikuthu from "../assets/Images/anayadikuthu.png";
-import kolukkumalai from "../assets/Images/kolukkumalai.png";
+import Delhi from "../../assets/Images/Delhi.png";
+import Gujarat from "../../assets/Images/Gujarat.png";
+import Harihar_fort from "../../assets/Images/Harihar_fort.png";
+import Harischandragad from "../../assets/Images/Harischandragad.png";
+import Munnar from "../../assets/Images/Munnar.png";
+import Pondy from "../../assets/Images/Pondy.png";
+import Punjab from "../../assets/Images/Punjab.png";
+import Rajasthan from "../../assets/Images/Rajasthan.png";
+import anayadikuthu from "../../assets/Images/anayadikuthu.png";
+import kolukkumalai from "../../assets/Images/kolukkumalai.png";
 import { Box, Typography } from "@mui/material";
 
 const Carousel: React.FC = () => {
@@ -68,6 +68,14 @@ const Carousel: React.FC = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
+      // bgcolor="pink"
+      height={{
+        xs: "30vh", // small screens (mobile)
+        sm: "50vh", // small to medium screens
+        md: "70vh", // medium screens (tablet)
+        lg: "70vh", // large screens (desktop)
+        xl: "80vh", // extra large screens
+      }}
     >
       <div className={styles.carousel}>
         <div
