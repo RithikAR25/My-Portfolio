@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { Box, Button, Grid, TextField } from "@mui/material";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { useFormik } from "formik"; // Import Formik
+import * as Yup from "yup"; // Import Yup for validation
+import { ToastContainer, toast } from "react-toastify"; // Import React-Toastify
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 
 // Google Maps container style
 const mapContainerStyle = {
@@ -17,13 +22,27 @@ const mapCenter = {
   lng: 107.6191, // Example longitude (use your desired location)
 };
 
+// Validation schema using Yup
+const validationSchema = Yup.object({
+  from_name: Yup.string()
+    .matches(
+      /^[A-Za-z ]*$/,
+      "Name must not contain numbers or special characters"
+    )
+    .required("Name is required"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  subject: Yup.string().required("Subject is required"),
+  message: Yup.string().required("Message is required"),
+});
+
 const ContactPage = () => {
-  // States to track visibility for the Google Map and Form
   const [isMapVisible, setIsMapVisible] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const mapRef = useRef<HTMLDivElement>(null); // Ref for the Google Map
-  const formRef = useRef<HTMLDivElement>(null); // Ref for the Contact Form
+  const formRef = useRef<HTMLFormElement>(null); // Ref for the Contact Form
 
   // Intersection Observer for the Google Map
   useEffect(() => {
@@ -59,6 +78,40 @@ const ContactPage = () => {
     return () => observer.disconnect(); // Cleanup observer on unmount
   }, []);
 
+  // Formik setup for form handling and validation
+  const formik = useFormik({
+    initialValues: {
+      from_name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    validationSchema, // Apply validation schema
+    onSubmit: (_values, { resetForm }) => {
+      if (formRef.current) {
+        // Ensure formRef.current is not null
+        emailjs
+          .sendForm(
+            "service_bdqci0d", // Replace with your actual service ID
+            "template_yliq0eq", // Replace with your actual template ID
+            formRef.current, // Pass the non-null form reference
+            "qX9EealRbBN_hm_1s" // Your actual public key
+          )
+          .then(
+            () => {
+              toast.success("Message sent successfully!"); // Success toast
+              resetForm(); // Reset the form after submission
+            },
+            (error) => {
+              toast.error(`Failed to send message: ${error.text}`); // Error toast
+            }
+          );
+      } else {
+        toast.error("Form could not be submitted. Please try again."); // Handle null formRef case
+      }
+    },
+  });
+
   return (
     <Box sx={{ flexGrow: 1, padding: 4 }}>
       {/* Content Section */}
@@ -75,16 +128,14 @@ const ContactPage = () => {
               transition: "opacity 1s ease, transform 1s ease", // Smooth animation
             }}
           >
-            <LoadScript googleMapsApiKey={googleMapsApiKey}>
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={mapCenter}
-                zoom={15}
-              >
-                {/* Marker at the center */}
-                <Marker position={mapCenter} />
-              </GoogleMap>
-            </LoadScript>
+            <Box>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d423.7332037545294!2d75.46474172060658!3d11.777975818392303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDQ2JzQwLjgiTiA3NcKwMjcnNTMuMSJF!5e0!3m2!1sen!2sin!4v1728887746450!5m2!1sen!2sin"
+                width="100%"
+                height="400px"
+                loading="lazy"
+              ></iframe>
+            </Box>
           </Box>
         </Grid>
 
@@ -93,6 +144,7 @@ const ContactPage = () => {
           <Box
             ref={formRef} // Attach ref to the form section
             component="form"
+            onSubmit={formik.handleSubmit} // Formik form submit handler
             sx={{
               opacity: isFormVisible ? 1 : 0, // Fade in/out
               transform: isFormVisible ? "scale(1)" : "scale(0.9)", // Scale in/out
@@ -104,8 +156,17 @@ const ContactPage = () => {
                 <TextField
                   fullWidth
                   label="Your Name"
-                  name="name"
+                  name="from_name"
                   variant="outlined"
+                  value={formik.values.from_name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.from_name && Boolean(formik.errors.from_name)
+                  }
+                  helperText={
+                    formik.touched.from_name && formik.errors.from_name
+                  }
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -114,6 +175,11 @@ const ContactPage = () => {
                   label="Email Address"
                   name="email"
                   variant="outlined"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.touched.email && Boolean(formik.errors.email)}
+                  helperText={formik.touched.email && formik.errors.email}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -122,6 +188,13 @@ const ContactPage = () => {
                   label="Subject"
                   name="subject"
                   variant="outlined"
+                  value={formik.values.subject}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.subject && Boolean(formik.errors.subject)
+                  }
+                  helperText={formik.touched.subject && formik.errors.subject}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -132,10 +205,21 @@ const ContactPage = () => {
                   variant="outlined"
                   multiline
                   rows={6}
+                  value={formik.values.message}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.message && Boolean(formik.errors.message)
+                  }
+                  helperText={formik.touched.message && formik.errors.message}
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit" // Trigger form submit
+                >
                   Send Message
                 </Button>
               </Grid>
@@ -143,6 +227,9 @@ const ContactPage = () => {
           </Box>
         </Grid>
       </Grid>
+
+      {/* Toast notifications */}
+      <ToastContainer />
     </Box>
   );
 };
