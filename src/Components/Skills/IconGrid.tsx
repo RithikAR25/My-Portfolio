@@ -175,7 +175,11 @@ const IconGrid = () => {
             />
             <Typography
               variant="h6"
-              sx={{ color: "primary.main", marginTop: "0.5rem" }}
+              sx={{
+                color: "primary.contrastText",
+
+                marginBottom: "0.5rem",
+              }}
             >
               {icon.title}
             </Typography>

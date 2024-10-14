@@ -9,7 +9,7 @@ export const getTheme = (mode: "light" | "dark") =>
         main: mode === "light" ? "#FFEA00" : "#FFEA00",
         light: mode === "light" ? "#FFFF6F" : "#FFFF6F", // light color for primary
         dark: mode === "light" ? "#C6B700" : "#C6B700", // dark color for primary
-        contrastText: mode === "light" ? "#000" : "#fff", // contrast text color for primary
+        contrastText: mode === "light" ? "#111" : "#FFEA00", // contrast text color for primary
       },
       secondary: {
         main: mode === "light" ? "#fff" : "#212121",
