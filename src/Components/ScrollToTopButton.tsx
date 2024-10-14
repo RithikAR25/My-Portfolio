@@ -57,7 +57,7 @@ const ScrollToTopButton: React.FC = () => {
       transition={{ duration: 0.5 }}
       style={{
         position: "fixed",
-        bottom: "6vw", // Positioned 4rem from the bottom to avoid overlap with other buttons
+        bottom: "8vh", // Positioned 4rem from the bottom to avoid overlap with other buttons
         right: "2vw", // Positioned 2rem from the right
         pointerEvents: isVisible ? "auto" : "none", // Disable interaction when not visible
       }}

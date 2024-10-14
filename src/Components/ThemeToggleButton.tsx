@@ -39,7 +39,7 @@ const ThemeToggleButton: React.FC<ThemeToggleButtonProps> = ({
       transition={{ duration: 0.5 }}
       style={{
         position: "fixed",
-        bottom: "2vw", // Positioned 2rem from the bottom
+        bottom: "2vh", // Positioned 2rem from the bottom
         right: "2vw", // Positioned 2rem from the right
       }}
     >

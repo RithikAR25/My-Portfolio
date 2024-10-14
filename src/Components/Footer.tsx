@@ -29,6 +29,7 @@ const Footer: React.FC = () => {
       component="footer"
       sx={{
         backgroundColor: "secondary.dark", // Sets the background to black
+        boxShadow: "0px -4px 12px rgba(0, 0, 0, 0.1)",
         color: "text.primary", // Sets the text color to white for contrast
         padding: "20px 0",
         textAlign: "center",
