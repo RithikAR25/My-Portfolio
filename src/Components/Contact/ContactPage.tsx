@@ -1,26 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Box, Button, Grid, TextField } from "@mui/material";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
 import { useFormik } from "formik"; // Import Formik
 import * as Yup from "yup"; // Import Yup for validation
 import { ToastContainer, toast } from "react-toastify"; // Import React-Toastify
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
-
-// Google Maps container style
-const mapContainerStyle = {
-  width: "100%",
-  height: "400px",
-};
-
-// Your Google Maps API key (replace with your actual key)
-const googleMapsApiKey = "YOUR_GOOGLE_MAPS_API_KEY";
-
-// Center point of the map
-const mapCenter = {
-  lat: -6.9175, // Example latitude (use your desired location)
-  lng: 107.6191, // Example longitude (use your desired location)
-};
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
