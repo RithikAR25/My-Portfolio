@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
       ref={footerRef} // Attach ref to the footer
       component="footer"
       sx={{
-        backgroundColor: "primary.main", // Sets the background to black
+        backgroundColor: "secondary.dark", // Sets the background to black
         color: "text.primary", // Sets the text color to white for contrast
         padding: "20px 0",
         textAlign: "center",

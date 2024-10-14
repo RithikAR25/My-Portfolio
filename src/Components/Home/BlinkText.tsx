@@ -57,7 +57,7 @@ const BlinkText = () => {
           color: "primary.main",
         }}
       >
-        {isFirstText ? "Rithik Ramachandran" : "Web Developer"}
+        {isFirstText ? "Rithik Ramachandran" : "A Web Developer"}
       </Typography>
     </Box>
   );

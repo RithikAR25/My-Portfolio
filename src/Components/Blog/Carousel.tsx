@@ -77,14 +77,19 @@ const Carousel: React.FC = () => {
         xl: "80vh", // extra large screens
       }}
     >
-      <div className={styles.carousel}>
+      <div
+        className={styles.carousel}
+        title="Move the pointer for the carousel effect."
+      >
         <div
           className={`${styles["carousel-control-button"]} ${styles.left}`}
           onClick={handleLeftClick} // Handle left click
+          title="Change Direction to left"
         ></div>
         <div
           className={`${styles["carousel-control-button"]} ${styles.right}`}
           onClick={handleRightClick} // Handle right click
+          title="Change Direction to right"
         ></div>
 
         <div
