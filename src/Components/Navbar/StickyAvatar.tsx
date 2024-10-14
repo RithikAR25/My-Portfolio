@@ -40,14 +40,14 @@ const StickyAvatar: React.FC<StickyAvatarProps> = ({
           src={avatarImage}
           sx={{
             width: {
-              xs: "17vh", // Extra small screens
+              xs: "15vh", // Extra small screens
               sm: "19vh", // Small screens
               md: "19vh", // Medium screens
               lg: "10vw", // Large screens
               xl: "10vw", // Extra large screens
             }, // Larger size for the avatar
             height: {
-              xs: "17vh", // Extra small screens
+              xs: "15vh", // Extra small screens
               sm: "19vh", // Small screens
               md: "19vh", // Medium screens
               lg: "10vw", // Large screens

@@ -134,7 +134,14 @@ const Home = () => {
               lg: 5, // padding-left for large screens
               xl: 6, // padding-left for extra-large screens
             }}
-            sx={{ height: "100%", width: "55%" }}
+            sx={{
+              height: {
+                xs: "50%", // Default height for extra-small screens
+                sm: "100%", // Custom height for small screens
+                md: "100%", // For medium screens and above
+              },
+              width: "55%",
+            }}
           >
             <Box sx={{ width: "100%" }}>
               <Typography
