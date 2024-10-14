@@ -26,39 +26,55 @@ const Carousel: React.FC = () => {
   };
 
   const items = [
-    { name: "Delhi", img: Delhi, link: "https://www.instagram.com/delhi" },
+    {
+      name: "Delhi",
+      img: Delhi,
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTkzMjUwMDkxOTExNzU5?story_media_id=3146125933249883648_39391045872&igsh=MjNzOTAxc3MydnNr",
+    },
     {
       name: "Gujarat",
       img: Gujarat,
-      link: "https://www.instagram.com/gujarat",
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTYzOTk3MjAzNDA0MDkz?story_media_id=3141410724459372822_39391045872&igsh=MWRrbnBjYzl1a2VnNw==",
     },
     {
       name: "Harihar Fort",
       img: Harihar_fort,
-      link: "https://www.instagram.com/harihar",
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE2OTQyMjUyOTczMzA5?story_media_id=3259169882150619764_39391045872&igsh=a3A3aGlxbnczcTEx",
     },
     {
       name: "Harischandragad",
       img: Harischandragad,
-      link: "https://www.instagram.com/harischandragad",
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDMwNzU1OTU5OTQwOTA2?story_media_id=3343227779253727320_39391045872&igsh=MTAyM3FpcmRicWdyZg==",
     },
-    { name: "Munnar", img: Munnar, link: "https://www.instagram.com/munnar" },
-    { name: "Pondy", img: Pondy, link: "https://www.instagram.com/pondy" },
-    { name: "Punjab", img: Punjab, link: "https://www.instagram.com/punjab" },
+    {
+      name: "Munnar",
+      img: Munnar,
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4NDI5NzA0Mzk1MDIxOTQx?story_media_id=3370096264119859443_39391045872&igsh=bnNlODhsMWcwYWg=",
+    },
+    {
+      name: "Pondy",
+      img: Pondy,
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODU1NjA2NDAyODQ4MzY1?story_media_id=2999700238637235871_39391045872&igsh=b2RhYW43ejJiOXZt",
+    },
+    {
+      name: "Punjab",
+      img: Punjab,
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MjE4MTYyMDExMjQ1MTcy?story_media_id=3148323911234527690_39391045872&igsh=bG1iaWN0enRzejc3",
+    },
     {
       name: "Rajasthan",
       img: Rajasthan,
-      link: "https://www.instagram.com/rajasthan",
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4Mzc0MDg5MzQyMDU2OTU1?story_media_id=3141715528401681826_39391045872&igsh=MTRleDF4bHJ1bHgwbw==",
     },
     {
       name: "Anayadikuthu",
       img: anayadikuthu,
-      link: "https://www.instagram.com/anayadikuthu",
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE3MDI0ODU0NTgzNDE5?story_media_id=3103878966960736816_39391045872&igsh=bW9vMDB4MnQ1eW83",
     },
     {
       name: "Kolukkumalai",
       img: kolukkumalai,
-      link: "https://www.instagram.com/kolukkumalai",
+      link: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MzU5MTk0MDYzMDE5MTg0?story_media_id=3094479906569928695_39391045872&igsh=d2l6b2ZkczRvY3N1",
     },
   ];
 
