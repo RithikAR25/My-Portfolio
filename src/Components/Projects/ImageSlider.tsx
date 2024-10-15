@@ -8,13 +8,13 @@ import {
   Typography,
 } from "@mui/material";
 import { ArrowForward, ArrowBack } from "@mui/icons-material";
-import BallRoll2 from "../../assets/Images/robot-human-silhouettes.jpg"; // Example image import
-import DiseasePredictionApp from "../../assets/Images/DiseasePredictionApp.jpg";
-import ImageGeneration from "../../assets/Images/autism-day-awareness-collage-style-with-people.jpg";
-import PerkPal from "../../assets/Images/growth-strategy-management-mission-success-concept.jpg";
-import MindDuel from "../../assets/Images/human-brain-detailed-structure.jpg";
-import TaskTrace from "../../assets/Images/flat-lay-clean-office-desk.jpg";
-import Websiteclone from "../../assets/Images/view-half-rhino-with-futuristic-robotic-parts.jpg";
+import BallRoll2 from "../../assets/Images/robot-human-silhouettes.webp"; // Example image import
+import DiseasePredictionApp from "../../assets/Images/DiseasePredictionApp.webp";
+import ImageGeneration from "../../assets/Images/autism-day-awareness-collage-style-with-people.webp";
+import PerkPal from "../../assets/Images/growth-strategy-management-mission-success-concept.webp";
+import MindDuel from "../../assets/Images/human-brain-detailed-structure.webp";
+import TaskTrace from "../../assets/Images/flat-lay-clean-office-desk.webp";
+import Websiteclone from "../../assets/Images/view-half-rhino-with-futuristic-robotic-parts.webp";
 
 const imageData = [
   {
@@ -79,6 +79,17 @@ const ImageSlider = () => {
   const timeoutRef = useRef<number | undefined>(undefined);
   const intervalRef = useRef<number | undefined>(undefined); // Ref for progress interval
 
+  // Preload images for smoother transitions
+  useEffect(() => {
+    const preloadImages = () => {
+      imageData.forEach((item) => {
+        const img = new Image();
+        img.src = item.img;
+      });
+    };
+    preloadImages(); // Preload images when component mounts
+  }, []); // Run only once when the component mounts
+
   useEffect(() => {
     // Reset timeout and interval whenever the current slide changes
     const resetTimeout = () => {
@@ -125,6 +136,22 @@ const ImageSlider = () => {
   const handleViewMoreClick = (url: string) => {
     window.open(url, "_blank"); // Open the URL in a new window/tab
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        handleNextSlide();
+      } else if (event.key === "ArrowLeft") {
+        handlePrevSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <Box
@@ -186,7 +213,7 @@ const ImageSlider = () => {
               </Box>
               <Button
                 variant="contained"
-                sx={{ marginRight: 2 }}
+                sx={{ marginRight: 2, color: "#111" }}
                 onClick={() => handleViewMoreClick(item.viewMoreLink)} // Add click handler
               >
                 View More
