@@ -202,7 +202,7 @@ const ContactPage = () => {
               <Grid item xs={12}>
                 <Button
                   variant="contained"
-                  color="primary"
+                  sx={{ color: "#111" }}
                   type="submit" // Trigger form submit
                 >
                   Send Message
