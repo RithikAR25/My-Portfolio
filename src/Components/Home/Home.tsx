@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material"; // Import specific icon
-import profileimage from "../../assets/Images/ppic.png";
+import profileimage from "../../assets/Images/ppic.webp";
 import rectangle from "../../assets/Images/Rectangle 9541.svg";
 import BlinkText from "./BlinkText";
 import linkedinIcon from "../../assets/Icons/linkedin-brands-solid (3).svg";
