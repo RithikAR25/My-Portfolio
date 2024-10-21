@@ -137,6 +137,11 @@ const ImageSlider = () => {
     window.open(url, "_blank"); // Open the URL in a new window/tab
   };
 
+  const handlePreviewClick = (index: number) => {
+    // Calculate the actual index in the imageData array and set as currentSlide
+    setCurrentSlide((currentSlide + index + 1) % imageData.length);
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -269,7 +274,9 @@ const ImageSlider = () => {
               backgroundSize: "cover",
               backgroundPosition: "center",
               position: "relative",
+              cursor: "pointer", // Add cursor pointer to indicate clickability
             }}
+            onClick={() => handlePreviewClick(index)} // Handle click on preview card
           >
             <CardMedia
               sx={{
