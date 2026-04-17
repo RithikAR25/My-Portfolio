@@ -192,33 +192,41 @@ const ImageSlider = () => {
             <Box
               sx={{
                 position: "absolute",
-                top: "40%",
-                left: "50px",
+                top: { xs: "35%", sm: "40%" },
+                left: { xs: "20px", sm: "50px" },
+                right: { xs: "20px", sm: "auto" }, // Added to bound text width on mobile
                 transform: "translateY(-50%)",
                 color: "white",
               }}
             >
               <Box
                 sx={{
-                  fontSize: "60px",
+                  fontSize: { xs: "2rem", sm: "40px", md: "60px" },
                   fontWeight: "bold",
                   color: "primary.main",
+                  lineHeight: 1.2,
+                  mb: { xs: 1, sm: 0 },
                 }}
               >
                 {item.title}
               </Box>
               <Box
                 sx={{
-                  fontSize: "30px",
-                  marginBottom: "20px",
+                  fontSize: { xs: "1rem", sm: "20px", md: "30px" },
+                  marginBottom: { xs: "10px", sm: "20px" },
                   color: "white",
+                  lineHeight: 1.3,
                 }}
               >
                 {item.description}
               </Box>
               <Button
                 variant="contained"
-                sx={{ marginRight: 2, color: "#111" }}
+                sx={{ 
+                  marginRight: 2, 
+                  color: "#111",
+                  fontSize: { xs: "0.8rem", sm: "1rem" }
+                }}
                 onClick={() => handleViewMoreClick(item.viewMoreLink)} // Add click handler
               >
                 View More
@@ -232,8 +240,8 @@ const ImageSlider = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "80%",
-          left: "20%",
+          top: { xs: "88%", sm: "80%" }, // Moved down slightly on mobile so it doesn't overlap centered text
+          left: { xs: "10%", sm: "20%" },
           zIndex: 10,
         }}
       >
@@ -245,7 +253,7 @@ const ImageSlider = () => {
         </IconButton>
         <IconButton
           onClick={handleNextSlide}
-          sx={{ backgroundColor: "primary.main", ml: 5 }}
+          sx={{ backgroundColor: "primary.main", ml: { xs: 3, sm: 5 } }}
         >
           <ArrowForward sx={{ color: "white" }} />
         </IconButton>
@@ -256,17 +264,17 @@ const ImageSlider = () => {
         sx={{
           position: "absolute",
           bottom: "3%",
-          right: "8%",
+          right: { xs: "4%", sm: "8%" },
           display: "flex",
-          gap: 2,
+          gap: { xs: 1, sm: 2 },
         }}
       >
         {getNextThreeImages().map((preview, index) => (
           <Card
             key={index}
             sx={{
-              width: "12vw",
-              height: "19vw",
+              width: { xs: "20vw", sm: "12vw" },
+              height: { xs: "30vw", sm: "19vw" },
               borderRadius: 3,
               overflow: "hidden",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",

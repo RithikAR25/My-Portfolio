@@ -38,6 +38,7 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
         opacity: isVisible ? 1 : 0, // Apply opacity based on visibility
         transform: isVisible ? "scale(1)" : "scale(0.8)", // Scale up when visible, scale down when not
         transition: "opacity 1s ease, transform 1s ease", // Smooth animation
+        padding: { xs: "2rem 0", sm: "0" }, // Add some vertical breathing room on mobile
       }}
     >
       <Typography
@@ -45,10 +46,11 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
         variant="h1"
         sx={{
           fontWeight: "bold",
-          fontSize: "10vw",
+          fontSize: { xs: "3rem", sm: "10vw" },
           textTransform: "uppercase",
           color: "transparent",
           WebkitTextStroke: `1px #c0c0c0`,
+          whiteSpace: "nowrap",
         }}
       >
         {text}
@@ -59,10 +61,11 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
         position="absolute"
         sx={{
           fontWeight: "bold",
-          fontSize: "3vw",
+          fontSize: { xs: "1.2rem", sm: "3vw" },
           textTransform: "uppercase",
           letterSpacing: "0.1em",
           color: `${theme.palette.primary.main}`,
+          whiteSpace: "nowrap",
         }}
       >
         {text}
