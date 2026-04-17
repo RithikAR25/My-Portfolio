@@ -9,7 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useTheme, useMediaQuery } from "@mui/material";
-import avatarImage from "../../assets/Images/dp.png";
+import avatarImage from "../../assets/Images/dp1.jpg";
 import AnimatedButton from "./AnimatedButton";
 import StickyAvatar from "./StickyAvatar";
 
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
               />
               <AnimatedButton
                 href="#projects"
-                spanText="Project"
+                spanText="Projects"
                 afterContent="Projects"
                 onClick={() => handleSmoothScroll("projects")} // Smooth scroll to projects
               />

@@ -26,17 +26,17 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         boxShadow: "none", // Disable shadow on hover
         overflow: "hidden", // Ensures the text doesn't overflow while animating
         display: "inline-block", // Needed to apply the hover effect correctly
-        width: "100%", // Ensures the button spans 100% width for proper centering
+        width: "max-content", // Ensures the button expands to fit its text content
         textAlign: "center", // Centers the text inside the button
+        padding: "6px 16px", // Ensure standard MUI padding
         transition: "color 2s",
         "&:hover": {
           color: "primary.main", // Changes color on hover
         },
         "& span": {
-          display: "block",
+          display: "inline-block",
           transition: "transform 0.3s",
           transform: "translateY(0)", // Initial position
-          width: "100%", // Ensure the span is 100% width for centering
           // Responsive font sizes
           fontSize: "4vw", // Default fallback
           "@media (min-width: 0px)": {
