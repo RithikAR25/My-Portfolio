@@ -192,28 +192,28 @@ const ImageSlider = () => {
             <Box
               sx={{
                 position: "absolute",
-                top: { xs: "35%", sm: "40%" },
-                left: { xs: "20px", sm: "50px" },
-                right: { xs: "20px", sm: "auto" }, // Added to bound text width on mobile
+                top: { xs: "28%", sm: "40%" },
+                left: { xs: "16px", sm: "50px" },
+                right: { xs: "16px", sm: "auto" },
                 transform: "translateY(-50%)",
                 color: "white",
               }}
             >
               <Box
                 sx={{
-                  fontSize: { xs: "2rem", sm: "40px", md: "60px" },
+                  fontSize: { xs: "clamp(16px, 5vw, 2rem)", sm: "40px", md: "60px" },
                   fontWeight: "bold",
                   color: "primary.main",
                   lineHeight: 1.2,
-                  mb: { xs: 1, sm: 0 },
+                  mb: { xs: 0.5, sm: 0 },
                 }}
               >
                 {item.title}
               </Box>
               <Box
                 sx={{
-                  fontSize: { xs: "1rem", sm: "20px", md: "30px" },
-                  marginBottom: { xs: "10px", sm: "20px" },
+                  fontSize: { xs: "clamp(12px, 3.5vw, 1rem)", sm: "20px", md: "30px" },
+                  marginBottom: { xs: "8px", sm: "20px" },
                   color: "white",
                   lineHeight: 1.3,
                 }}
@@ -222,12 +222,14 @@ const ImageSlider = () => {
               </Box>
               <Button
                 variant="contained"
-                sx={{ 
-                  marginRight: 2, 
+                sx={{
+                  marginRight: 2,
                   color: "#111",
-                  fontSize: { xs: "0.8rem", sm: "1rem" }
+                  fontSize: { xs: "0.7rem", sm: "1rem" },
+                  py: { xs: 0.5, sm: 1 },
+                  px: { xs: 1.5, sm: 2 },
                 }}
-                onClick={() => handleViewMoreClick(item.viewMoreLink)} // Add click handler
+                onClick={() => handleViewMoreClick(item.viewMoreLink)}
               >
                 View More
               </Button>
@@ -240,8 +242,8 @@ const ImageSlider = () => {
       <Box
         sx={{
           position: "absolute",
-          top: { xs: "88%", sm: "80%" }, // Moved down slightly on mobile so it doesn't overlap centered text
-          left: { xs: "10%", sm: "20%" },
+          top: { xs: "80%", sm: "80%" },
+          left: { xs: "5%", sm: "20%" },
           zIndex: 10,
         }}
       >

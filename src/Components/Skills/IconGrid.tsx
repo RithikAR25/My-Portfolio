@@ -177,8 +177,13 @@ const IconGrid = () => {
               variant="h6"
               sx={{
                 color: "primary.contrastText",
-
                 marginBottom: "0.5rem",
+                fontSize: {
+                  xs: "clamp(10px, 3vw, 0.85rem)",
+                  sm: "clamp(10px, 1.8vw, 1rem)",
+                  md: "1rem",
+                  lg: "1rem",
+                },
               }}
             >
               {icon.title}

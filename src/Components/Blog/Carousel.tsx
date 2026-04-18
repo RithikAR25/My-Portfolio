@@ -86,11 +86,11 @@ const Carousel: React.FC = () => {
       alignItems="center"
       // bgcolor="pink"
       height={{
-        xs: "30vh", // small screens (mobile)
-        sm: "50vh", // small to medium screens
-        md: "70vh", // medium screens (tablet)
-        lg: "70vh", // large screens (desktop)
-        xl: "80vh", // extra large screens
+        xs: "45vh",
+        sm: "50vh",
+        md: "70vh",
+        lg: "70vh",
+        xl: "80vh",
       }}
     >
       <div

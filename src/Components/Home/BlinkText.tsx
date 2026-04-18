@@ -40,7 +40,13 @@ const BlinkText = () => {
       <Typography
         variant="h2"
         component="h2"
-        sx={{ fontSize: "clamp(1vw, 3.5vw, 3rem)" }}
+        sx={{
+          fontSize: {
+            xs: "clamp(14px, 5vw, 1.6rem)",
+            sm: "clamp(14px, 3.5vw, 2rem)",
+            md: "clamp(14px, 3vw, 2.5rem)",
+          },
+        }}
       >
         Hello! I'm&nbsp;
       </Typography>
@@ -50,7 +56,11 @@ const BlinkText = () => {
         variant="h2"
         component="h2"
         sx={{
-          fontSize: "clamp(1vw, 3.5vw, 3rem)",
+          fontSize: {
+            xs: "clamp(14px, 5vw, 1.6rem)",
+            sm: "clamp(14px, 3.5vw, 2rem)",
+            md: "clamp(14px, 3vw, 2.5rem)",
+          },
           animation: isAnimating
             ? `${fadeOutAnimation} 0.5s forwards` // Apply fade-out animation
             : `${fadeInAnimation} 0.5s forwards`, // Apply fade-in animation

@@ -28,17 +28,18 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
 
   return (
     <Box
-      ref={headingRef} // Attach ref to the Box
+      ref={headingRef}
       width="100%"
       display="flex"
       justifyContent="center"
       alignItems="center"
       position="relative"
+      overflow="hidden"
       sx={{
-        opacity: isVisible ? 1 : 0, // Apply opacity based on visibility
-        transform: isVisible ? "scale(1)" : "scale(0.8)", // Scale up when visible, scale down when not
-        transition: "opacity 1s ease, transform 1s ease", // Smooth animation
-        padding: { xs: "2rem 0", sm: "0" }, // Add some vertical breathing room on mobile
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "scale(1)" : "scale(0.8)",
+        transition: "opacity 1s ease, transform 1s ease",
+        padding: { xs: "1.5rem 0", sm: "0" },
       }}
     >
       <Typography
@@ -46,7 +47,7 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
         variant="h1"
         sx={{
           fontWeight: "bold",
-          fontSize: { xs: "3rem", sm: "10vw" },
+          fontSize: { xs: "8vw", sm: "10vw" },
           textTransform: "uppercase",
           color: "transparent",
           WebkitTextStroke: `1px #c0c0c0`,
@@ -61,7 +62,7 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
         position="absolute"
         sx={{
           fontWeight: "bold",
-          fontSize: { xs: "1.2rem", sm: "3vw" },
+          fontSize: { xs: "clamp(14px, 4vw, 1.5rem)", sm: "3vw" },
           textTransform: "uppercase",
           letterSpacing: "0.1em",
           color: `${theme.palette.primary.main}`,

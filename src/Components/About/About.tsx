@@ -68,7 +68,7 @@ const About = () => {
         >
           {/* Red Box with animation */}
           <Box
-            ref={redBoxRef} // Attach ref to the red box
+            ref={redBoxRef}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -86,12 +86,11 @@ const About = () => {
               xl: "30vw",
             }}
             sx={{
-              opacity: isRedVisible ? 1 : 0, // Fade in/out
-              transform: isRedVisible
-                ? "scale(1) " // Scale and translate to original position when visible
-                : "scale(0.9) ", // Scale down and translate upwards when not visible
-              transition: "opacity 1s ease, transform 1s ease", // Smooth transition
-              transformOrigin: "top", // Scale from the top
+              opacity: isRedVisible ? 1 : 0,
+              transform: isRedVisible ? "scale(1)" : "scale(0.9)",
+              transition: "opacity 1s ease, transform 1s ease",
+              transformOrigin: "top",
+              pb: { xs: 2, sm: 0 },
             }}
           >
             <Box
@@ -102,7 +101,7 @@ const About = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: {
-                  xs: "35vw",
+                  xs: "55vw",
                   sm: "95%",
                   md: "95%",
                   lg: "95%",
@@ -111,48 +110,52 @@ const About = () => {
                 aspectRatio: "1 / 1",
               }}
             >
-              {/* Your content inside the box */}
             </Box>
           </Box>
 
           {/* Yellow Box with animation */}
           <Box
-            ref={yellowBoxRef} // Attach ref to the yellow box
+            ref={yellowBoxRef}
             display="flex"
             flexDirection="column"
-            width="55%"
+            width={{
+              xs: "100%",
+              sm: "55%",
+            }}
+            px={{
+              xs: 2,
+              sm: 0,
+            }}
             alignItems={{
-              xs: "center",
+              xs: "start",
               sm: "start",
               md: "start",
             }}
             sx={{
-              opacity: isYellowVisible ? 1 : 0, // Fade in/out
-              transform: isYellowVisible
-                ? "scale(1) " // Scale and translate to original position when visible
-                : "scale(0.9) ", // Slide in from the left with a rotation
-              transition: "opacity 1s ease, transform 1s ease", // Smooth transition
+              opacity: isYellowVisible ? 1 : 0,
+              transform: isYellowVisible ? "scale(1)" : "scale(0.9)",
+              transition: "opacity 1s ease, transform 1s ease",
             }}
           >
             <Typography
               variant="h1"
               pr={{
-                xs: 2,
+                xs: 0,
                 sm: 4,
                 md: 4,
                 lg: 10,
                 xl: 10,
               }}
               pt={{
-                xs: 2,
+                xs: 1,
                 sm: 0,
               }}
               fontSize={{
-                xs: "clamp(.9vw, 3vw, 5rem)",
-                sm: "clamp(.5vw, 3.2vw, 3rem)",
-                md: "clamp(.5vw, 3.6vw, 3rem)",
-                lg: "clamp(.5vw, 3.6vw, 3rem)",
-                xl: "clamp(.5vw, 3.6vw, 3rem)",
+                xs: "clamp(20px, 6vw, 2rem)",
+                sm: "clamp(16px, 3.2vw, 2.5rem)",
+                md: "clamp(16px, 3.6vw, 3rem)",
+                lg: "clamp(16px, 3.6vw, 3rem)",
+                xl: "clamp(16px, 3.6vw, 3rem)",
               }}
             >
               Rithik Ramachandran
@@ -160,24 +163,24 @@ const About = () => {
             <Typography
               variant="body1"
               pr={{
-                xs: 2,
+                xs: 0,
                 sm: 4,
                 md: 4,
                 lg: 10,
                 xl: 10,
               }}
               pt={{
-                xs: 2,
+                xs: 1,
                 sm: 2,
               }}
               fontSize={{
-                xs: "clamp(.9vw, 2.2vw, 5rem)",
-                sm: "clamp(.5vw, 1.7vw, 3rem)",
-                md: "clamp(.5vw, 1.7vw, 3rem)",
-                lg: "clamp(.5vw, 1.6vw, 3rem)",
-                xl: "clamp(.5vw, 1.6vw, 3rem)",
+                xs: "clamp(13px, 3.5vw, 1rem)",
+                sm: "clamp(13px, 1.7vw, 1.2rem)",
+                md: "clamp(13px, 1.7vw, 1.4rem)",
+                lg: "clamp(13px, 1.6vw, 1.4rem)",
+                xl: "clamp(13px, 1.6vw, 1.4rem)",
               }}
-              lineHeight={1.2}
+              lineHeight={{ xs: 1.5, sm: 1.2 }}
             >
               As a passionate developer born and raised in Kerala, I thrive on
               innovation and problem-solving. My journey in tech is fueled by a

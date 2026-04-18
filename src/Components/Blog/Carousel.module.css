@@ -11,6 +11,15 @@
   --carousel-animation-duration: 50s;
 }
 
+/* Responsive overrides for small screens */
+@media (max-width: 599px) {
+  :root {
+    --carousel-item-width: 22vw;
+    --carousel-item-height: 33vw;
+    --carousel-diameter: 88vw;
+  }
+}
+
 .carousel {
   --_diameter: var(--carousel-diameter);
   --_radius: calc(var(--_diameter) / 2);

@@ -22,99 +22,37 @@ const Home = () => {
           display="flex"
           justifyContent="start"
           alignItems="center"
-          gap="3%"
+          gap={{ xs: "4%", sm: "3%" }}
           pl={{
-            xs: 3, // padding-left for extra-small screens
-            sm: 3, // padding-left for small screens
-            md: 4, // padding-left for medium screens
-            lg: 5, // padding-left for large screens
-            xl: 6, // padding-left for extra-large screens
+            xs: 2,
+            sm: 3,
+            md: 4,
+            lg: 5,
+            xl: 6,
           }}
         >
+          {[{ src: linkedinIcon, url: "https://www.linkedin.com/in/rithik-ramachandran-312698316?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BJV8M%2FzgeSpCQuQXnMs8chQ%3D%3D" }, { src: githubIcon, url: "https://github.com/RithikAR25" }, { src: instagramIcon, url: "https://www.instagram.com/rithik_ramachandran_?igsh=MXgyMmNlODlycGlsMQ==" }, { src: xIcon, url: "https://x.com/RithikRamachan1?t=pcC3xldVuGEGDiEqEGm0HQ&s=09" }].map(({ src, url }, i) => (
           <img
-            src={linkedinIcon}
-            alt="SVG Icon"
+            key={i}
+            src={src}
+            alt="Social Icon"
             style={{
-              height: "4vh",
-              width: "4vh",
-              cursor: "pointer", // Change cursor to pointer on hover
-              transition: "transform 0.3s ease", // Smooth transition for the scale effect
+              height: "clamp(20px, 3.5vh, 36px)",
+              width: "clamp(20px, 3.5vh, 36px)",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
             }}
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/rithik-ramachandran-312698316?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BJV8M%2FzgeSpCQuQXnMs8chQ%3D%3D",
-                "_blank"
-              )
-            } // Open LinkedIn in a new tab
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.1)")
-            } // Scale up the icon on hover
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset the scale on mouse leave
+            onClick={() => window.open(url, "_blank")}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.15)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           />
-
-          <img
-            src={githubIcon}
-            alt="SVG Icon"
-            style={{
-              height: "4vh",
-              width: "4vh",
-              cursor: "pointer", // Change cursor to pointer on hover
-              transition: "transform 0.3s ease", // Smooth transition for the scale effect
-            }}
-            onClick={() =>
-              window.open("https://github.com/RithikAR25", "_blank")
-            } // Open LinkedIn in a new tab
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.1)")
-            } // Scale up the icon on hover
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset the scale on mouse leave
-          />
-          <img
-            src={instagramIcon}
-            alt="SVG Icon"
-            style={{
-              height: "4vh",
-              width: "4vh",
-              cursor: "pointer", // Change cursor to pointer on hover
-              transition: "transform 0.3s ease", // Smooth transition for the scale effect
-            }}
-            onClick={() =>
-              window.open(
-                "https://www.instagram.com/rithik_ramachandran_?igsh=MXgyMmNlODlycGlsMQ==",
-                "_blank"
-              )
-            } // Open LinkedIn in a new tab
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.1)")
-            } // Scale up the icon on hover
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset the scale on mouse leave
-          />
-          <img
-            src={xIcon}
-            alt="SVG Icon"
-            style={{
-              height: "4vh",
-              width: "4vh",
-              cursor: "pointer", // Change cursor to pointer on hover
-              transition: "transform 0.3s ease", // Smooth transition for the scale effect
-            }}
-            onClick={() =>
-              window.open(
-                "https://x.com/RithikRamachan1?t=pcC3xldVuGEGDiEqEGm0HQ&s=09",
-                "_blank"
-              )
-            } // Open LinkedIn in a new tab
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.1)")
-            } // Scale up the icon on hover
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset the scale on mouse leave
-          />
+          ))}
         </Box>
         <Box
           display="flex"
           flexDirection={{
-            xs: "column", // flexDirection column for extra-small screens
-            sm: "row", // flexDirection row for small screens and up
+            xs: "column",
+            sm: "row",
             md: "row",
           }}
           justifyContent="center"
@@ -126,42 +64,45 @@ const Home = () => {
             flexDirection="column"
             justifyContent="center"
             alignItems="start"
-            //   bgcolor="lightgray"
             pl={{
-              xs: 3, // padding-left for extra-small screens
-              sm: 3, // padding-left for small screens
-              md: 4, // padding-left for medium screens
-              lg: 5, // padding-left for large screens
-              xl: 6, // padding-left for extra-large screens
+              xs: 2,
+              sm: 3,
+              md: 4,
+              lg: 5,
+              xl: 6,
+            }}
+            pr={{
+              xs: 2,
+              sm: 0,
             }}
             sx={{
               height: {
-                xs: "50%", // Default height for extra-small screens
-                sm: "100%", // Custom height for small screens
-                md: "100%", // For medium screens and above
+                xs: "55%",
+                sm: "100%",
+                md: "100%",
               },
-              width: "55%",
+              width: {
+                xs: "100%",
+                sm: "55%",
+              },
             }}
           >
             <Box sx={{ width: "100%" }}>
               <Typography
                 variant="h2"
                 component="h2"
-                pl={3}
                 pb={{
-                  xs: 2, // padding-left for extra-small screens
-                  sm: 4, // padding-left for small screens
-                  md: 4, // padding-left for medium screens
-                  lg: 4, // padding-left for large screens
-                  xl: 4, // padding-left for extra-large screens
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
                 }}
                 sx={{
                   fontSize: {
-                    xs: "clamp(.9vw, 2vw, 5rem)", // For extra-small screens
-                    sm: "clamp(.5vw, 1.2vw, 3rem)", // For small screens
-                    md: "clamp(.5vw, 1.2vw, 3rem)", // For medium screens
-                    lg: "clamp(.5vw, 1.2vw, 3rem)", // For large screens
-                    xl: "clamp(.5vw, 1.2vw, 3rem)", // For extra-large screens
+                    xs: "clamp(10px, 3.5vw, 1rem)",
+                    sm: "clamp(10px, 1.4vw, 1.5rem)",
+                    md: "clamp(10px, 1.2vw, 3rem)",
+                    lg: "clamp(10px, 1.2vw, 3rem)",
+                    xl: "clamp(10px, 1.2vw, 3rem)",
                   },
                 }}
               >
@@ -170,16 +111,17 @@ const Home = () => {
               <BlinkText />
               <Typography
                 variant="body2"
-                pt={2}
+                pt={{ xs: 1, sm: 2 }}
                 sx={{
                   fontSize: {
-                    xs: "clamp(.9vw, 2.5vw, 5rem)", // For extra-small screens
-                    sm: "clamp(.5vw, 1.7vw, 3rem)", // For small screens
-                    md: "clamp(.5vw, 1.7vw, 3rem)", // For medium screens
-                    lg: "clamp(.5vw, 1.7vw, 3rem)", // For large screens
-                    xl: "clamp(.5vw, 1.7vw, 3rem)", // For extra-large screens
+                    xs: "clamp(11px, 3vw, 1rem)",
+                    sm: "clamp(11px, 1.7vw, 1.2rem)",
+                    md: "clamp(11px, 1.5vw, 1.5rem)",
+                    lg: "clamp(11px, 1.4vw, 1.5rem)",
+                    xl: "clamp(11px, 1.4vw, 1.5rem)",
                   },
                   color: "text.secondary",
+                  lineHeight: { xs: 1.5, sm: 1.6 },
                 }}
               >
                 Turning ideas into impactful experiences is my strength. With a
@@ -192,19 +134,26 @@ const Home = () => {
           <Box
             display="flex"
             justifyContent="center"
-            alignItems="center"
-            sx={{ height: "90vh", width: "45%" }}
+            alignItems={{ xs: "flex-start", sm: "center" }}
+            sx={{
+              height: { xs: "45%", sm: "90vh" },
+              width: { xs: "100%", sm: "45%" },
+              pt: { xs: 1, sm: 0 },
+            }}
           >
             <Box
-              //   bgcolor="red"
               position="relative"
               display="flex"
               alignContent="center"
-              sx={{ height: "80%", aspectRatio: "81.25 / 100" }}
+              sx={{
+                height: { xs: "85%", sm: "80%" },
+                aspectRatio: "81.25 / 100",
+                maxHeight: { xs: "38vh", sm: "none" },
+              }}
             >
               <img
                 src={rectangle}
-                alt="Example"
+                alt="Decorative rectangle"
                 style={{
                   position: "absolute",
                   width: "80%",
@@ -215,11 +164,12 @@ const Home = () => {
               />
               <img
                 src={profileimage}
-                alt="Example"
+                alt="Rithik Ramachandran profile"
                 style={{
                   width: "100%",
                   height: "100%",
-                  zIndex: "10",
+                  zIndex: 10,
+                  objectFit: "cover",
                 }}
               />
             </Box>

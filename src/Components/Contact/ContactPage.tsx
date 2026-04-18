@@ -98,26 +98,27 @@ const ContactPage = () => {
   });
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 4 }}>
+    <Box sx={{ flexGrow: 1, padding: { xs: 2, sm: 3, md: 4 } }}>
       {/* Content Section */}
       <Grid container spacing={2}>
         {/* Google Map Section */}
         <Grid item xs={12} md={7}>
           <Box
-            ref={mapRef} // Attach ref to the map section
+            ref={mapRef}
             sx={{
               borderRadius: 2,
               overflow: "hidden",
-              opacity: isMapVisible ? 1 : 0, // Fade in/out
-              transform: isMapVisible ? "scale(1)" : "scale(0.9)", // Scale in/out
-              transition: "opacity 1s ease, transform 1s ease", // Smooth animation
+              opacity: isMapVisible ? 1 : 0,
+              transform: isMapVisible ? "scale(1)" : "scale(0.9)",
+              transition: "opacity 1s ease, transform 1s ease",
             }}
           >
             <Box>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d423.7332037545294!2d75.46474172060658!3d11.777975818392303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDQ2JzQwLjgiTiA3NcKwMjcnNTMuMSJF!5e0!3m2!1sen!2sin!4v1728887746450!5m2!1sen!2sin"
                 width="100%"
-                height="400px"
+                height="300px"
+                style={{ display: "block" }}
                 loading="lazy"
               ></iframe>
             </Box>

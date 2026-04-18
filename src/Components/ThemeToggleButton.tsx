@@ -44,13 +44,14 @@ const ThemeToggleButton: React.FC<ThemeToggleButtonProps> = ({
       }}
     >
       <Fab
+        size="small"
         sx={{
-          backgroundColor: "transparent", // Making the button color transparent
-          boxShadow: "none", // Removing the shadow effect
+          backgroundColor: "transparent",
+          boxShadow: "none",
           "&:hover": {
-            backgroundColor: "rgba(255, 255, 255, 0.1)", // Slight hover effect to indicate interaction
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
           },
-          ...useStyles.fab, // Apply the bounce animation
+          ...useStyles.fab,
         }}
         aria-label="toggle theme"
         onClick={toggleTheme}
