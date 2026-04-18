@@ -67,4 +67,17 @@ export const getTheme = (mode: "light" | "dark") =>
         fontWeight: 600, // Yrsa light
       },
     },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          // MUI CssBaseline defaults body to overflow-y: scroll, which permanently
+          // reserves scrollbar space and creates a right-side gap at all widths.
+          // Override to use auto + scrollbar-gutter: stable instead.
+          body: {
+            overflowY: "auto",
+            scrollbarGutter: "stable",
+          },
+        },
+      },
+    },
   });

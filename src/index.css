@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  /* Use scrollbar-gutter instead of overflow-y: scroll to avoid reserving
+     scrollbar space when it isn't needed — this eliminates the right-side gap */
+  scrollbar-gutter: stable;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
